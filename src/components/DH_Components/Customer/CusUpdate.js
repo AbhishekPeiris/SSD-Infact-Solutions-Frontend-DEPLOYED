@@ -52,7 +52,7 @@ const UpdateProfile = ({
         imageUrl: imageUrl
       }
 
-      await axios.put('http://localhost:8070/customer/update', updateObject, config)
+      await axios.put('https://ssdinfactsolutionsbackend.vercel.app//customer/update', updateObject, config)
       .then((res) => {
         toast.success('Your details updated successfully',{position:toast.POSITION.TOP_CENTER});
         window.setTimeout(function() {

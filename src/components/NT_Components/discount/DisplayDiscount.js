@@ -26,7 +26,7 @@ export default class DisplayDiscount extends Component{
     }
  
     displayDiscount(){
-        axios.get("http://localhost:8070/discount/display").then(res =>{
+        axios.get("https://ssdinfactsolutionsbackend.vercel.app/discount/display").then(res =>{
             if(res.data.success){
                 this.setState({
                     discount:res.data.existingdiscount
@@ -41,7 +41,7 @@ export default class DisplayDiscount extends Component{
  
     onDelete=(id)=>{
         if (window.confirm('Are you sure you wish to delete this item?')) {
-        axios.delete(`http://localhost:8070/discount/delete/${id}`).then((res)=>{
+        axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/discount/delete/${id}`).then((res)=>{
                 //alert("Delete successful");
                 toast.warn('Delete successful',{position:toast.POSITION.TOP_CENTER});
                  this.displayDiscount();
@@ -61,7 +61,7 @@ export default class DisplayDiscount extends Component{
     handleSearchArea = (e)=> {
        const searchKey = e.currentTarget.value;
  
-       axios.get("http://localhost:8070/discount/display").then(res =>{
+       axios.get("https://ssdinfactsolutionsbackend.vercel.app/discount/display").then(res =>{
             if(res.data.success){
                    this.filterData(res.data.existingdiscount,searchKey)
                 };
@@ -72,7 +72,7 @@ export default class DisplayDiscount extends Component{
  
     async generateReport() {
         const obj = { discount: this.state.discount }
-        await axios.post('http://localhost:8070/generateDiscountReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+        await axios.post('https://ssdinfactsolutionsbackend.vercel.app//generateDiscountReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
             alert('Report Generated')
             console.log(res)
             console.log(res.data)

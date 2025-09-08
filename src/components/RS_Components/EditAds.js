@@ -52,7 +52,7 @@ export default class EditAds extends Component{
     console.log(data)
 
     
-    axios.put(`http://localhost:8070/ads/adupdate/${adID}`,data).then((res)=>{
+    axios.put(`/ads/adupdate/${adID}`,data).then((res)=>{
       if(res.data.success){
 
         toast.success('Advertisement Updated Successfully',{position:toast.POSITION.TOP_CENTER})
@@ -81,7 +81,7 @@ export default class EditAds extends Component{
   componentDidMount(){
     const adID=this.props.match.params.adID;
 
-    axios.get(`http://localhost:8070/ads/${adID}`).then((res)=>{
+    axios.get(`https://ssdinfactsolutionsbackend.vercel.ap/ads/${adID}`).then((res)=>{
       if (res.data.success){
         this.setState({
           title:res.data.ads.title,

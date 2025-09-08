@@ -49,7 +49,7 @@ export default function CusRegistration(){
         }
 
         if (pwd1 === pwd2) { 
-        axios.post("http://localhost:8070/customer/signup",newCustomer)
+        axios.post("https://ssdinfactsolutionsbackend.vercel.app/customer/signup",newCustomer)
         .then(()=>{
             //alert("Registration Success")
             toast.success('Registration Success',{position:toast.POSITION.TOP_CENTER});

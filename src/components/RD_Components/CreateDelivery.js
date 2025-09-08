@@ -42,7 +42,7 @@ export default function CreateDelivery() {
     };
     
   
-    axios.post("http://localhost:8070/deliverys/deliveryadd",data)
+    axios.post("https://ssdinfactsolutionsbackend.vercel.app/deliverys/deliveryadd",data)
     .then(()=>{
       toast.success('Delivery Added Successfully',{position:toast.POSITION.TOP_CENTER})
       window.setTimeout(function() {

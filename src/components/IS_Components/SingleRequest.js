@@ -19,7 +19,7 @@ const SingleProductRequest = ({itemname, brand, model, version, itemId}) => {
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.delete(`http://localhost:8070/requests/delete/${itemId}`, config)
+    await axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/requests/delete/${itemId}`, config)
     .then((res) => {
       alert(res.data.status)
       window.location = "/profile"

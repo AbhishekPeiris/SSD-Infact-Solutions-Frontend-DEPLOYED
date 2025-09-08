@@ -39,7 +39,7 @@ export default class Home extends Component {
 
   //data retrive
   retrieveOrders() {
-    axios.get("http://localhost:8070/HOrders/displayorder").then(res => {
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/HOrders/displayorder").then(res => {
       if (res.data.success) {
 
         this.setState({

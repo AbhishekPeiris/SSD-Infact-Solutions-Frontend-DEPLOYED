@@ -22,7 +22,7 @@ componentDidMount(){
   this.retrieveProducts();
 }
   retrieveProducts(){
-    axios.get("http://localhost:8070/products/displayProducts").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/products/displayProducts").then(res=>{
     if(res.data.success){
         this.setState({
           products:res.data.existingProducts
@@ -44,7 +44,7 @@ filterData(products,searchKey){
 
 handleSearchArea = (e)=>{
   const searchKey = e.currentTarget.value;
-    axios.get("http://localhost:8070/products/displayProducts").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/products/displayProducts").then(res=>{
       if(res.data.success){
       this.filterData(res.data.existingProducts,searchKey)
     }

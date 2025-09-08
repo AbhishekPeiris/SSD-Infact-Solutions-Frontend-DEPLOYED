@@ -38,7 +38,7 @@ const Purchasehistory = () => {
            Authorization: localStorage.getItem("Authorization")
         },
       }
-      await axios.get('http://localhost:8070/purchasehistory/display', config)
+      await axios.get('https://ssdinfactsolutionsbackend.vercel.app/purchasehistory/display', config)
       .then((res) => {
         setOrders(res.data.purchasehistory)
       })

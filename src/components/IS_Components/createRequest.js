@@ -96,7 +96,7 @@ export default class CreateRequestproduct extends Component {
     };
 
     axios
-    .post('http://localhost:8070/requests/add', requestproduct, config)
+    .post('/requests/add', requestproduct, config)
     .then((res) => {
       console.log(res.data)
       alert('Request Added Successfully')

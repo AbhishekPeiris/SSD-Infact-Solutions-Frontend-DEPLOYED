@@ -38,7 +38,7 @@ const Profile = () => {
                   Authorization: localStorage.getItem("Authorization")
                },
             }
-            await axios.get("http://localhost:8070/customer/profile", config)
+            await axios.get("https://ssdinfactsolutionsbackend.vercel.app//customer/profile", config)
               .then((res) => {
                 setName(res.data.Cus.name)
                 setEmail(res.data.Cus.email)
@@ -78,7 +78,7 @@ const Profile = () => {
         },
       };
       if (window.confirm('Are you sure you wish to delete this Account?')) {
-        await axios.delete('http://localhost:8070/customer/delete', config)
+        await axios.delete('/customer/delete', config)
         .then((res) => {
          toast.success('Your account deleted successfuly',{position:toast.POSITION.TOP_CENTER});
           localStorage.removeItem('role')

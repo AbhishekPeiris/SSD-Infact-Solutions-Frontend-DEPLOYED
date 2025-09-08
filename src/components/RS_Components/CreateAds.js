@@ -84,7 +84,7 @@ export default class CreateAds extends Component{
          }
       
      else{
-      axios.post("http://localhost:8070/ads/adadd",data).then((res)=>{
+      axios.post("https://ssdinfactsolutionsbackend.vercel.app/ads/adadd",data).then((res)=>{
         if(res.data.success){
   
           toast.success('Advertisement published Successfully',

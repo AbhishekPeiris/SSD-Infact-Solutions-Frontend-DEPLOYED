@@ -21,7 +21,7 @@ export default class DisplayRequestProduct extends Component {
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.get('http://localhost:8070/requests/myrequests', config)
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/requests/myrequests', config)
     .then((res) => {
       this.setState({ requests: res.data.requests })
     })
@@ -33,7 +33,7 @@ export default class DisplayRequestProduct extends Component {
   async generateReport() {
 
     const obj = { request: this.state.requests }
-    await axios.post('http://localhost:8070/generateRequestReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, })
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/generateRequestReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, })
     .then((res) => {
       alert('Report Generated')
 

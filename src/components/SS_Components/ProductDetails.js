@@ -55,7 +55,7 @@ const ProductInfromation = (productId) => {
       try {
         console.log(productId.productId)
         await axios
-          .get(`http://localhost:8070/products/${productId.productId}`)
+          .get(`https://ssdinfactsolutionsbackend.vercel.app/products/${productId.productId}`)
           .then((res) => {
             setproductName(res.data.products.productName);
             setquantity(res.data.products.quantity);
@@ -88,7 +88,7 @@ const ProductInfromation = (productId) => {
     };
     const data = {}
   
-    await axios.post(`http://localhost:8070/wishlist/add/${productId.productId}`,data,config)
+    await axios.post(`https://ssdinfactsolutionsbackend.vercel.app/wishlist/add/${productId.productId}`,data,config)
     .then((res) => {
       toast.success('Product added to wishlist successfully.',{position:toast.POSITION.TOP_CENTER});
     })
@@ -105,7 +105,7 @@ const ProductInfromation = (productId) => {
     };
     const data = {}
   
-    await axios.post(`http://localhost:8070/cart/add/${productId.productId}`,data,config)
+    await axios.post(`https://ssdinfactsolutionsbackend.vercel.app/cart/add/${productId.productId}`,data,config)
     .then((res) => {
       toast.success('Product added to Cart successfully.',{position:toast.POSITION.TOP_CENTER});
     })

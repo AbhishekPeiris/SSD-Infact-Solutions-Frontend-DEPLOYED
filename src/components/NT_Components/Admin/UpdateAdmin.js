@@ -42,7 +42,7 @@ const UpdateProfile  = ({
         description : description,
         profileImage: profileImage
       }
-      await axios.put('http://localhost:8070/admin/update', updateObject, config)
+      await axios.put('https://ssdinfactsolutionsbackend.vercel.app/admin/update', updateObject, config)
       .then((res) => {
         alert(res.data.status)
         window.location = "/admin"

@@ -40,7 +40,7 @@ export default class Home extends Component {
 
   //data retrive
   retrieveDeliverys() {
-    axios.get("http://localhost:8070/deliverys/displaydeliverys").then(res => {
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/deliverys/displaydeliverys").then(res => {
       if (res.data.success) {
 
         this.setState({
@@ -58,7 +58,7 @@ export default class Home extends Component {
 
 
     if (window.confirm('Are you sure you wish to delete this details?')) {
-      axios.delete(`http://localhost:8070/deliverys/delete/${deliveryID}`).then((res) => {
+      axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/deliverys/delete/${deliveryID}`).then((res) => {
         toast.warning('Details Deleted Successfully', { position: toast.POSITION.TOP_CENTER });
 
         //alert("Delete Successfully")
@@ -84,7 +84,7 @@ export default class Home extends Component {
 
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8070/deliverys/displaydeliverys").then(res => {
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/deliverys/displaydeliverys").then(res => {
       if (res.data.success) {
 
         this.filterData(res.data.existingDeliverys, searchKey)
@@ -95,7 +95,7 @@ export default class Home extends Component {
   }
   async generateReport() {
     const obj = { deliverys: this.state.deliverys }
-    await axios.post('http://localhost:8070/deliveryreport/generatedeliveryreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/deliveryreport/generatedeliveryreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
       alert('Report Generated')
       console.log(res)
       console.log(res.data)

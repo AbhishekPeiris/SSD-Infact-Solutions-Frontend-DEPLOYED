@@ -19,7 +19,7 @@ const Feedbacks = (productId) => {
     setLoading(true);
     const fetchFeedbacks = async () => {
       await axios
-        .get(`http://localhost:8070/feedbacks/read/${productId.productId}`)
+        .get(`https://ssdinfactsolutionsbackend.vercel.app/feedbacks/read/${productId.productId}`)
         .then((res) => {
           setFeedbacks(res.data.feedbacks);
           setRatings(res.data.ratings);

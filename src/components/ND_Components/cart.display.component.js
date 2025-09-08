@@ -19,7 +19,7 @@ const Cart = () => {
                   Authorization: localStorage.getItem("Authorization")
                },
             }
-            await axios.get(`http://localhost:8070/cart/display`, config)
+            await axios.get(`https://ssdinfactsolutionsbackend.vercel.app/cart/display`, config)
                .then((res) => {
                   setCart(res.data.cart)
                   setLoading(false)
@@ -42,7 +42,7 @@ const Cart = () => {
 
    const generateReport = async () => {
       const obj = {cartItems: cart}
-      await axios.post('http://localhost:8070/report-generator/generatecartreport', obj).then(() => {
+      await axios.post('https://ssdinfactsolutionsbackend.vercel.app/report-generator/generatecartreport', obj).then(() => {
         alert('Report generated')
       }).catch((err) => {
         console.log(err.message)

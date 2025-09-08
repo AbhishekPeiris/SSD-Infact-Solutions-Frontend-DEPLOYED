@@ -47,7 +47,7 @@ const Ratings = ({ ratings, productId }) => {
     const fetchProductData = async () => {
       try {
         await axios
-          .get(`http://localhost:8070/products/${productId.productId}`)
+          .get(`https://ssdinfactsolutionsbackend.vercel.app/products/${productId.productId}`)
           .then((res) => {
             setAverageRating(res.data.products.averageRating)
             setLoading(false);

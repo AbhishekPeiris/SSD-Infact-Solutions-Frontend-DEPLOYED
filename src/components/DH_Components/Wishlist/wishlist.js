@@ -28,7 +28,7 @@ const handleChangePage = (event, newPage) => {
                   Authorization: localStorage.getItem("Authorization")
                },
             }
-            await axios.get(`http://localhost:8070/wishlist/display`, config)
+            await axios.get(`https://ssdinfactsolutionsbackend.vercel.app/wishlist/display`, config)
                .then((res) => {
                   setWishlist(res.data.wishlist)
                   setLoading(false)

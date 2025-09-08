@@ -22,7 +22,7 @@ export default class DeliveryDetails extends Component {
     componentDidMount(){
         const deliveryID = this.props.match.params.deliveryID;
 
-        axios.get(`http://localhost:8070/deliverys/${deliveryID}`).then((res)=>{
+        axios.get(`https://ssdinfactsolutionsbackend.vercel.app/deliverys/${deliveryID}`).then((res)=>{
         if (res.data.success){
         this.setState({
             deliverys:res.data.deliverys

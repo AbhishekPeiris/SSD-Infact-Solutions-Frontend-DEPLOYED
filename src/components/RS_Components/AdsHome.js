@@ -47,7 +47,7 @@ componentDidMount(){
 
 
   retrieveAds(){
-    axios.get("http://localhost:8070/ads/displayAds").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/ads/displayAds").then(res=>{
 
      if(res.data.success){
        this.setState({
@@ -66,7 +66,7 @@ componentDidMount(){
 
     if (window.confirm('Are you sure you wish to delete this item?')) {
 
-      axios.delete(`http://localhost:8070/ads/delete/${id}`).then((res)=>{
+      axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/ads/delete/${id}`).then((res)=>{
 
         toast.success('Advertisement Deleted Successfully',{position:toast.POSITION.TOP_CENTER});
 
@@ -91,7 +91,7 @@ componentDidMount(){
   handleSearchArea=(e)=>{
     const searchKey=e.currentTarget.value;
 
-    axios.get("http://localhost:8070/ads/displayAds").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/ads/displayAds").then(res=>{
   
        if(res.data.success){
         
@@ -107,7 +107,7 @@ componentDidMount(){
 
     const obj = { ads: this.state.ads }
 
-    await axios.post('http://localhost:8070/generateadsreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/generateadsreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
 
         alert('Report Generated')
         console.log(res)

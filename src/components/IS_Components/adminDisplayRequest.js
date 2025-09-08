@@ -9,7 +9,7 @@ const DisplayProductRequest = () => {
 
   useEffect(() => {
     const fetchRequest = async () => {
-      await axios.get('http://localhost:8070/requests/all')
+      await axios.get('https://ssdinfactsolutionsbackend.vercel.ap/requests/all')
       .then((res) => {
         setProductRequests(res.data.requests)
       })

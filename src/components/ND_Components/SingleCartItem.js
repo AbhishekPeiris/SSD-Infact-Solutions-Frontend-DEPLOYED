@@ -31,7 +31,7 @@ const SingleCartItem = ({productId, productImage, productname, quantity, price, 
       },
     };
 
-    await axios.put(`http://localhost:8070/cart/update/${cartId}`, data, config)
+    await axios.put(`https://ssdinfactsolutionsbackend.vercel.app/cart/update/${cartId}`, data, config)
     .then((res) => {
       console.log(res.data.status)
     })
@@ -60,7 +60,7 @@ const SingleCartItem = ({productId, productImage, productname, quantity, price, 
         },
       };
   
-      await axios.put(`http://localhost:8070/cart/update/${cartId}`, data, config)
+      await axios.put(`https://ssdinfactsolutionsbackend.vercel.app/cart/update/${cartId}`, data, config)
       .then((res) => {
         console.log(res.data.status)
       })
@@ -80,7 +80,7 @@ const SingleCartItem = ({productId, productImage, productname, quantity, price, 
       },
     };
 
-    await axios.delete(`http://localhost:8070/cart/delete/${cartId}`, config)
+    await axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/cart/delete/${cartId}`, config)
       .then((res) => {
         console.log(res.data.status)
         window.location = "/cart"

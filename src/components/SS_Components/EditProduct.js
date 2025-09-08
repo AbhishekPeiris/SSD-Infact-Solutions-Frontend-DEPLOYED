@@ -56,7 +56,7 @@ export default class EditProduct extends Component{
       }
      
       console.log(data)
-      axios.put(`http://localhost:8070/products/update/${productID}`,data).then((res)=>{
+      axios.put(`https://ssdinfactsolutionsbackend.vercel.app/products/update/${productID}`,data).then((res)=>{
          toast.success('Item Updated Successfully',{position:toast.POSITION.TOP_CENTER});
          
          if(res.data.success){      
@@ -83,7 +83,7 @@ export default class EditProduct extends Component{
   
    componentDidMount(){
       const productID = this.props.match.params.productID;
-      axios.get(`http://localhost:8070/products/${productID}`).then((res)=>{
+      axios.get(`https://ssdinfactsolutionsbackend.vercel.app/products/${productID}`).then((res)=>{
          if(res.data.success){
            this.setState({
             productName:res.data.products.productName,

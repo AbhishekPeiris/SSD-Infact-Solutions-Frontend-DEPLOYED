@@ -46,7 +46,7 @@ const CreateFeedback = (productId) => {
       },
     };
 
-    axios.post(`http://localhost:8070/feedbacks/add/${productId.productId.productId}`, feedback, config)
+    axios.post(`https://ssdinfactsolutionsbackend.vercel.app/feedbacks/add/${productId.productId.productId}`, feedback, config)
       .then((res) => {
         console.log('data send to database');
         window.location.reload()

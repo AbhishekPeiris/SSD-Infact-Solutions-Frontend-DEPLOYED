@@ -32,7 +32,7 @@ export default class CheckOutPage extends Component {
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.get('http://localhost:8070/cart/display', config)
+    await axios.get('/cart/display', config)
     .then((res) => {
       this.setState({cartItems: res.data.cart})
     })
@@ -40,7 +40,7 @@ export default class CheckOutPage extends Component {
       console.log(err.message)
     })
 
-    await axios.get('http://localhost:8070/customer/profile', config)
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/customer/profile', config)
     .then((res) => {
       this.setState({
         userName: res.data.Cus.name,
@@ -81,7 +81,7 @@ export default class CheckOutPage extends Component {
       totalPrice: this.state.totalPrice,
       description: this.state.description
     }
-    await axios.post('http://localhost:8070/order/create', data, config)
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/order/create', data, config)
     // .then((res) => {
     //   alert('success')
     //   window.location="/inventory"

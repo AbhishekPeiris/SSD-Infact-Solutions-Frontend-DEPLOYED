@@ -43,7 +43,7 @@ export default class RequestproductList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8070/requests/all")
+      .get("https://ssdinfactsolutionsbackend.vercel.app/requests/all")
       .then(response => {
         this.setState({ requestproduct: response.data })
         console.log(response.data);
@@ -54,7 +54,7 @@ export default class RequestproductList extends Component {
   }
 
   deleteRequestproduct(id) {
-    axios.delete("http://localhost:8070/requests/delete" + id).then((response) => {
+    axios.delete("https://ssdinfactsolutionsbackend.vercel.app/requests/delete" + id).then((response) => {
       console.log(response.data);
     });
 

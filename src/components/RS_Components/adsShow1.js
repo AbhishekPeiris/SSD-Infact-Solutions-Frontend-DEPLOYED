@@ -48,7 +48,7 @@ function AdsShow1() {
     const getProducts = async () => {
       try {
 
-        await axios.get("http://localhost:8070/ads/displayAds")
+        await axios.get("https://ssdinfactsolutionsbackend.vercel.app/ads/displayAds")
           .then((res) => {
             setSources(res.data.existingAds)
             setLoading(false)

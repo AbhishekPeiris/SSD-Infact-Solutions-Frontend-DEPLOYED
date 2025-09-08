@@ -15,7 +15,7 @@ export default class AdminFeedbacks extends React.Component {
   }
 
   async componentDidMount() {
-    await axios.get('http://localhost:8070/admin/getcomments').then((res) => {
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/admin/getcomments').then((res) => {
       this.setState({ feedbacks: res.data.feedbacks })
     }).catch((err) => {
       console.log(err.message)
@@ -25,7 +25,7 @@ export default class AdminFeedbacks extends React.Component {
   async generateReport() {
 
     const obj = { feedbacks: this.state.feedbacks }
-    await axios.post('http://localhost:8070/generatefeedbackreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/generatefeedbackreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
       alert('Report Generated')
       console.log(res)
       console.log(res.data)

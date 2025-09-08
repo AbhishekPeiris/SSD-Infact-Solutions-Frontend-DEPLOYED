@@ -58,7 +58,7 @@ const TableRowItem = ({ pid, pName, pPrice, quantity }) => {
             "content-type": "application/json",
          },
       };
-      await axios.delete(`http://localhost:8070/cart/delete/${productId}`, config)
+      await axios.delete(`https://ssdinfactsolutionsbackend.vercel.ap/cart/delete/${productId}`, config)
          .then(() => {
             console.log('deleted')
             window.location = '/inventory'

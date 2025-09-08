@@ -216,7 +216,7 @@ onSubmit = (e)=>{
            }
          
         else{
-         axios.post("http://localhost:8070/products/add",data).then((res)=>{
+         axios.post("https://ssdinfactsolutionsbackend.vercel.app/products/add",data).then((res)=>{
             
         if(res.data.success){
          //alert("Product Create Successfully")

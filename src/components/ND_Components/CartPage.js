@@ -39,7 +39,7 @@ export default class CartPage extends Component {
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.get('http://localhost:8070/cart/display', config)
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/cart/display', config)
     .then((res) => {
       this.setState({cartItems: res.data.cart})
     })
@@ -56,7 +56,7 @@ export default class CartPage extends Component {
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.get('http://localhost:8070/cart/display', config)
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/cart/display', config)
     .then((res) => {
       this.setState({cartItems: res.data.cart})
     })
@@ -84,7 +84,7 @@ export default class CartPage extends Component {
 
 //     const obj = { cart: this.state.cart }
 
-//     await axios.post('http://localhost:8070/generatecartreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+//     await axios.post('/generatecartreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
 
 //         //alert('Report Generated')
 

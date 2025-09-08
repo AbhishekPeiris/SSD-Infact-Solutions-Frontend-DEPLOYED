@@ -60,7 +60,7 @@ onSubmit = (e) =>{
 
 console.log(data)
 
-axios.put(`http://localhost:8070/deliverys/update/${deliveryID}`,data).then((res) =>{
+axios.put(`https://ssdinfactsolutionsbackend.vercel.app/deliverys/update/${deliveryID}`,data).then((res) =>{
 if(res.data.success){
   if (window.confirm('Are you sure you wish to update this details?')) {
   toast.success('Delivery Updated Successfully',{position:toast.POSITION.TOP_CENTER});
@@ -95,7 +95,7 @@ this.setState(*/
   componentDidMount(){
     const deliveryID = this.props.match.params.deliveryID;
 
-    axios.get(`http://localhost:8070/deliverys/${deliveryID}`).then((res)=>{
+    axios.get(`https://ssdinfactsolutionsbackend.vercel.app/deliverys/${deliveryID}`).then((res)=>{
     if (res.data.success){
     this.setState({
        orderid:res.data.deliverys.orderid,

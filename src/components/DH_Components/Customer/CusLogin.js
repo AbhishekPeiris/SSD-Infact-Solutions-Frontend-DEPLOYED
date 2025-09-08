@@ -30,7 +30,7 @@ export default class CusLogin extends Component {
  
       
   
-      await axios.post("http://localhost:8070/customer/login",userData)
+      await axios.post("https://ssdinfactsolutionsbackend.vercel.app/customer/login",userData)
       .then((res) => {
         this.setState({
           token: res.data.token

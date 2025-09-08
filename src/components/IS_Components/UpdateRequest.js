@@ -25,7 +25,7 @@ const UpdateRequestProducts = ({show, onHide, itemId, itemname, brand, model, ve
         Authorization: localStorage.getItem("Authorization")
      },
     }
-    await axios.post(`http://localhost:8070/requests/update/${itemId}`, updateRequest, config)
+    await axios.post(`https://ssdinfactsolutionsbackend.vercel.app/requests/update/${itemId}`, updateRequest, config)
     .then((res) => {
       alert(res.data.status)
       window.location = "/profile"

@@ -66,7 +66,7 @@ export default class DiscountEdit extends Component{
         console.log(data);
  
  
-        axios.put(`http://localhost:8070/discount/update/${id}`,data).then((res)=>{
+        axios.put(`https://ssdinfactsolutionsbackend.vercel.app/discount/update/${id}`,data).then((res)=>{
             if(res.data.success){
                 //alert("discount update successfully");
                 toast.success('Discount Update Successfully',{position:toast.POSITION.TOP_CENTER});
@@ -89,7 +89,7 @@ export default class DiscountEdit extends Component{
         componentDidMount(){
             const id = this.props.match.params.id;
    
-            axios.get(`http://localhost:8070/discount/display/${id}`).then((res) => {
+            axios.get(`https://ssdinfactsolutionsbackend.vercel.app/discount/display/${id}`).then((res) => {
                 if(res.data.success){
                     this.setState({
                         productName :res.data.discount.productName,

@@ -71,7 +71,7 @@ const Feedback = ({ id, productId, customerId, customerName, profilePicture, rat
       },
     }; 
 
-    await axios.delete(`http://localhost:8070/feedbacks/delete/${productId}/${id}`, config)
+    await axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/feedbacks/delete/${productId}/${id}`, config)
       .then((res) => {
         alert('Your Comment Deleted')
         window.location=`/products/${productId}`

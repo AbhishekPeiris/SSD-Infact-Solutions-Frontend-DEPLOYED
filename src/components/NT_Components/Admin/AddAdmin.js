@@ -32,7 +32,7 @@ function AddAdmin(){
     }
     console.log(newadmin)
     if(password === cpassword){
-    axios.post("http://localhost:8070/admin/add",newadmin).then(()=>{
+    axios.post("https://ssdinfactsolutionsbackend.vercel.app/admin/add",newadmin).then(()=>{
       toast.success('Admin Register Succesfull',{position:toast.POSITION.TOP_CENTER});
       window.setTimeout(function() {
         window.location.href = '/admin';

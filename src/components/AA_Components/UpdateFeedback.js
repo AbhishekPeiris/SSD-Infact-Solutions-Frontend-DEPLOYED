@@ -26,7 +26,7 @@ const UpdateFeedback = ({comment,rating,feedbackId,productId,show, onHide}) => {
         "content-type": "application/json",
       },
     };
-    await axios.put(`http://localhost:8070/feedbacks/update/${productId}/${feedbackId}`, updatedFeedback, config)
+    await axios.put(`https://ssdinfactsolutionsbackend.vercel.app/feedbacks/update/${productId}/${feedbackId}`, updatedFeedback, config)
     .then((res) => {
       alert(res.data.status)
       window.location=`/products/${productId}`

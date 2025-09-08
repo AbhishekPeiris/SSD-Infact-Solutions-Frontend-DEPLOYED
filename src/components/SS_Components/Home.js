@@ -36,7 +36,7 @@ componentDidMount(){
   this.retrieveProducts();
 }
   retrieveProducts(){
-    axios.get("http://localhost:8070/products/displayProducts").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/products/displayProducts").then(res=>{
     if(res.data.success){
         this.setState({
           products:res.data.existingProducts
@@ -49,7 +49,7 @@ componentDidMount(){
 //Delete Button Link
 onDelete = (productID)=>{
   if (window.confirm('Are you sure you wish to delete this item?')) {
-  axios.delete(`http://localhost:8070/products/delete/${productID}`).then((res)=>{
+  axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/products/delete/${productID}`).then((res)=>{
      //alert("Delete Successfully");
      toast.warning('Items Deleted Successfully',{position:toast.POSITION.TOP_CENTER});
      this.retrieveProducts();
@@ -69,7 +69,7 @@ filterData(products,searchKey){
 
 handleSearchArea = (e)=>{
   const searchKey = e.currentTarget.value;
-    axios.get("http://localhost:8070/products/displayProducts").then(res=>{
+    axios.get("https://ssdinfactsolutionsbackend.vercel.app/products/displayProducts").then(res=>{
       if(res.data.success){
       this.filterData(res.data.existingProducts,searchKey)
     }
@@ -79,7 +79,7 @@ handleSearchArea = (e)=>{
 //generate report
 async generateReport() {
   const obj = {products: this.state.products }
-  await axios.post('http://localhost:8070/generateproductreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+  await axios.post('https://ssdinfactsolutionsbackend.vercel.app/generateproductreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
   alert('Report Generated')
   
   console.log(res)

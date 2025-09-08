@@ -29,7 +29,7 @@ export default class DisplayWishlist extends Component {
       },
     };
 
-    await axios.get('http://localhost:8070/wishlist/display', config)
+    await axios.get('https://ssdinfactsolutionsbackend.vercel.app/wishlist/display', config)
     .then((res) => {
       this.setState({wishlist: res.data.wishlist})
     })
@@ -51,7 +51,7 @@ export default class DisplayWishlist extends Component {
         Authorization: localStorage.getItem("Authorization"),
       },
     };
-    await axios.delete(`http://localhost:8070/wishlist/delete/${id}`, config)
+    await axios.delete(`https://ssdinfactsolutionsbackend.vercel.app/wishlist/delete/${id}`, config)
     .then((res) => {
       this.setState({open: true})
     })
@@ -105,7 +105,7 @@ export default class DisplayWishlist extends Component {
 
   async generateReport() {
     const obj = { wishlist: this.state.wishlist }
-    await axios.post('http://localhost:8070/generateWishlistReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+    await axios.post('https://ssdinfactsolutionsbackend.vercel.app/generateWishlistReport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
         alert('Report Generated')
         console.log(res)
         console.log(res.data)
@@ -135,7 +135,7 @@ handleSearchArea = (e)=> {
 
  const searchKey = e.currentTarget.value;
 
- axios.get("http://localhost:8070/wishlist/display").then(res =>{
+ axios.get("https://ssdinfactsolutionsbackend.vercel.app/0/wishlist/display").then(res =>{
 
       if(res.data.success){
              this.filterData(res.data.existingwishlist,searchKey)

@@ -29,7 +29,7 @@ export default class AddDiscount extends Component{
     }
  
     async componentDidMount() {
-        await axios.get('http://localhost:8070/discount/getallproductname')
+        await axios.get('https://ssdinfactsolutionsbackend.vercel.app/discount/getallproductname')
         .then((res) => {
           this.setState({itemNames: res.data.items});
         })
@@ -97,7 +97,7 @@ export default class AddDiscount extends Component{
  
  
  
-        axios.post("http://localhost:8070/discount/add",data).then((res)=>{
+        axios.post("https://ssdinfactsolutionsbackend.vercel.app/discount/add",data).then((res)=>{
             if(res.data.success){
               toast.success('discount added successfully',{position:toast.POSITION.TOP_CENTER});
                 this.setState({
@@ -113,7 +113,7 @@ export default class AddDiscount extends Component{
             }
         })
  
-        axios.post("http://localhost:8070/discount/addOffers",data).then((res)=>{
+        axios.post("https://ssdinfactsolutionsbackend.vercel.app/discount/addOffers",data).then((res)=>{
         })
     }
  

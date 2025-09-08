@@ -13,7 +13,7 @@ export default class DisplayOneDiscount extends Component{
     componentDidMount(){
         const id = this.props.match.params.id;
  
-        axios.get(`http://localhost:8070/discount/display/${id}`).then((res) => {
+        axios.get(`https://ssdinfactsolutionsbackend.vercel.app/discount/display/${id}`).then((res) => {
             if(res.data.success){
                 this.setState({
                     discount:res.data.discount

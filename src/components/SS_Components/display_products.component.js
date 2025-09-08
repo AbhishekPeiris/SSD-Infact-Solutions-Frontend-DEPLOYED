@@ -19,7 +19,7 @@ const DisplayProducts = () => {
       setLoading(true)
       const getProducts = async () => {
          try {
-            await axios.get('http://localhost:8070/products/displayProducts')
+            await axios.get('https://ssdinfactsolutionsbackend.vercel.app/products/displayProducts')
                .then((res) => {
                 setProducts(res.data.existingProducts)
                   setLoading(false)
