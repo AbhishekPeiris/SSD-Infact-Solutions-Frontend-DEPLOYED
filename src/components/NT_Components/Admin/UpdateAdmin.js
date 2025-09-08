@@ -76,7 +76,7 @@ const UpdateProfile  = ({
             <label>Email</label>
  
                   <input type="email" required className="form-control" value={email}
-                  onChange={(e) => setEmail(e.target.value)} required/>
+                  onChange={(e) => setEmail(e.target.value)}/>
  
             <label>User Name</label>
  

@@ -84,7 +84,7 @@ export default class CartPage extends Component {
 
 //     const obj = { cart: this.state.cart }
 
-//     await axios.post('/generatecartreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
+//     await axios.post('http://localhost:8070/generatecartreport', obj, { responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, }).then((res) => {
 
 //         //alert('Report Generated')
 
@@ -146,7 +146,7 @@ export default class CartPage extends Component {
                 <div>
         <br />
           <ReactToPrint
-            trigger={() => <Button variant="contained" className="w-10 mt-2" style={{ width: 100+"%"}} startIcon={<InsertDriveFileIcon />} className="generateReport1 btn btn-info btn-lg" type="button"><i class="fas fa-redo pr-2" aria-hidden="true"></i> Download your Cart Details
+            trigger={() => <Button variant="contained" className="w-10 mt-2" style={{ width: 100+"%"}} startIcon={<InsertDriveFileIcon />}  type="button"><i class="fas fa-redo pr-2" aria-hidden="true"></i> Download your Cart Details
             </ Button>}
              content={() => this.componentRef}/>
             <br /><br /><br />  
