@@ -32,9 +32,12 @@
     "validator": "^13.6.0",
     "web-vitals": "^1.1.2"
   },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "node -e \"const p=require('./package.json'); if(p.dependencies && p.dependencies['material-ui']) { console.error('Remove legacy material-ui@0.20.0'); process.exit(1); }\""
